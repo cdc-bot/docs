@@ -6,5 +6,5 @@ Once I've realized that, I've started a new codebase known as today's **cdc-bot*
 Honestly, it was just me getting bored and looking for something to make, they're not really that useful.
 ## Why?
 Because.
-Anyway, look around these docs as much as you'd like!<br>
-<--- The sidebar on the right contains more articles, to return to this page, click the **cdc-bot docs** header!
+Anyway, look around these docs as much as you'd like!<br><br>
+**<--- The sidebar on the left contains more articles, to return to this page, click the cdc-bot docs header!**
