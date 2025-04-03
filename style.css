@@ -18,10 +18,19 @@ body {
 }
 
 .sidebar h2 {
+    cursor: pointer;
     padding-top:5px;
     padding-left:15px;
     padding-bottom:5px;
     margin:0px;
+    background-color:rgba(181, 181, 227, 0.25);
+}
+
+.sidebar h2:hover {
+    background-color:rgba(181, 181, 227, 0.35);
+}
+
+.sidebar h2:active {
     background-color:rgba(181, 181, 227, 0.25);
 }
 
@@ -43,6 +52,7 @@ details {
     display:flex;
     flex-direction: column;
     gap:5px;
+    background-color: rgba(181, 181, 227, 0.05);
 }
 
 details:hover {
@@ -75,7 +85,9 @@ details a {
     height: 30px;
     display: flex;
     background-color: rgba(181, 181, 227, 0.2);
-    font-weight:bolder;
+}
+.link-display-a a {
+    font-weight: 700;
 }
 
 .link-display:hover {

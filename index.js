@@ -1,3 +1,4 @@
+activeElement = null;
 function parse(md){
     var lines = md.split("\n")
     var ret = {};
@@ -5,7 +6,7 @@ function parse(md){
     lines.splice(0,1);
     var cur = "";
     for (line of lines){
-        if (line.startsWith("<!")) {cur = line.replace("<!","").replace("\r","");ret[cur]=[]; continue;}
+        if (line.startsWith("<!")) {cur = line.replace("<!","").replace("\r","");ret[cur]=["# "+cur]; continue;}
         if (line.startsWith("!>")) {cur = "";continue}
         if (ret[cur]) ret[cur].push(line.replace("\r",""))
     }
@@ -30,11 +31,9 @@ function createUI(data){
             // set all elements to be inactive first
             var element = e.target;
             if (e.target.tagName == "A") element = element.parentElement;
-            for (child of element.parentElement.children){
-                if (child.tagName=="SUMMARY") continue;
-                child.setAttribute("class","link-display");
-            }
+            if (activeElement!= null) activeElement.setAttribute("class","link-display");
             element.setAttribute("class","link-display-a");
+            activeElement = element;
             renderMD(element.md);
         })
         var a = document.createElement("a");
@@ -48,7 +47,8 @@ function createUI(data){
 
 async function createFromListing(){
     var main = await fetch("md/main.md");
-    renderMD(await main.text());
+    main_md = await main.text();
+    renderMD(main_md);
     var _l = await fetch("md/listing");
     var listing = (await _l.text()).split("\n");
     for (item of listing){
@@ -61,4 +61,8 @@ function renderMD(md){
     document.getElementById("md").innerHTML = con.makeHtml(md);
 }
 
+document.getElementById("home").addEventListener("click",()=>{
+    activeElement.setAttribute("class","link-display");
+    renderMD(main_md);
+})
 createFromListing();

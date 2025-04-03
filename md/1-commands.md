@@ -1,16 +1,16 @@
 # 1. Commands
-<!/divorce
+<!1.1 /divorce
 # divorcing
 !>
-<!/marriages
+<!1.2 /marriages
 # a
 !>
-<!/opinion
+<!1.3 /opinion
 # b
 !>
-<!/bean
+<!1.4 /bean
 # c
 !>
-<!/propose
+<!1.5 /propose
 # d
 !>
