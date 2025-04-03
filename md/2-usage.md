@@ -1,10 +1,14 @@
-# 2. Usage
-<!2.1 Adding the bot
-
-!>
-<!2.2 Disabling specific commands
-
-!>
-<!2.3 Contributing & self-hosting
-
+# 2. Usage (Testing Section)
+<!2.1 Parser features
+# h1
+## h2
+### h3
+#### h4
+##### h5
+###### h6
+normal
+*italics*
+**bold**
+~~strikethrough~~ (unsupported by parser :<)
+`code`
 !>
