@@ -25,6 +25,18 @@ function createUI(data){
         if (key == "title") continue;
         var div = document.createElement("div");
         div.setAttribute("class","link-display");
+        div.md = data[key];
+        div.addEventListener("click",(e)=>{
+            // set all elements to be inactive first
+            var element = e.target;
+            if (e.target.tagName == "A") element = element.parentElement;
+            for (child of element.parentElement.children){
+                if (child.tagName=="SUMMARY") continue;
+                child.setAttribute("class","link-display");
+            }
+            element.setAttribute("class","link-display-a");
+            renderMD(element.md);
+        })
         var a = document.createElement("a");
         a.text = key;
         div.appendChild(a);
@@ -35,12 +47,18 @@ function createUI(data){
 }
 
 async function createFromListing(){
+    var main = await fetch("md/main.md");
+    renderMD(await main.text());
     var _l = await fetch("md/listing");
     var listing = (await _l.text()).split("\n");
     for (item of listing){
         var md = await fetch("md/"+item);
         createUI(parse(await md.text()));
     }
+}
+function renderMD(md){
+    var con = new showdown.Converter();
+    document.getElementById("md").innerHTML = con.makeHtml(md);
 }
 
 createFromListing();

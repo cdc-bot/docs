@@ -6,6 +6,7 @@ html {
 
 body {
     margin: 0px;
+    display:flex;
 }
 
 .sidebar {
@@ -52,17 +53,6 @@ details:open {
     background-color: rgba(181, 181, 227, 0.1);
 }
 
-.link-display {
-    border-radius:10px;
-    cursor: pointer;
-    height: 30px;
-    display: flex;
-}
-
-.link-display:hover {
-    background-color: rgba(181, 181, 227, 0.1);
-}
-
 details a {
     white-space: nowrap;
     overflow:hidden;
@@ -70,4 +60,28 @@ details a {
     font-weight: normal;
     align-self: center;
     margin-left: 25px;
+}
+
+.link-display {
+    border-radius:10px;
+    cursor: pointer;
+    height: 30px;
+    display: flex;
+}
+
+.link-display-a {
+    border-radius:10px;
+    cursor: pointer;
+    height: 30px;
+    display: flex;
+    background-color: rgba(181, 181, 227, 0.2);
+    font-weight:bolder;
+}
+
+.link-display:hover {
+    background-color: rgba(181, 181, 227, 0.1);
+}
+
+.md-view {
+    padding:15px;
 }
