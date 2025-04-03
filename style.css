@@ -97,6 +97,6 @@ details a {
 .md-view {
     padding:15px;
     height:calc(100% - 30px);   
-    width:100%;
+    width:73%;
     overflow-y:auto;
 }
